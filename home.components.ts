@@ -21,13 +21,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private data: DataService) { }
 
-  // ngOnInit() {
-  //   this.data.getIncomes().subscribe(
-  //     data =>  {this.incomes = data;
-  //     this.incomes = Array.of(this.incomes);
-  //     }
-  //   );
-  // }
   ngOnInit() {
     this.data.getIncomes().subscribe(
       data => this.incomes = data.data
