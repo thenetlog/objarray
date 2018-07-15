@@ -1,29 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 interface myData {
-  obj: Object;
+  data: Object;
   key: string;
   value: string;
 }
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-income',
+  templateUrl: './income.component.html',
+  styleUrls: ['./income.component.scss']
 })
 
-export class HomeComponent implements OnInit {
+export class IncomeComponent implements OnInit {
 
-  incomes: any = [];
+  incomes$: any = [];
 
   constructor(private data: DataService) { }
 
+  // ngOnInit() {
+  //   this.data.getIncomes().subscribe(
+  //     data =>  {this.incomes = data;
+  //     this.incomes = Array.of(this.incomes);
+  //     }
+  //   );
+  // }
   ngOnInit() {
     this.data.getIncomes().subscribe(
-      data => this.incomes = data.data
+      (data: any) => {this.incomes$ = data.data;}
     );
   }
 }
