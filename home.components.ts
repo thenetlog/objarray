@@ -3,29 +3,20 @@ import { DataService } from '../data.service';
 
 interface myData {
   data: Object;
-  key: string;
-  value: string;
 }
 
 @Component({
-  selector: 'app-income',
-  templateUrl: './income.component.html',
-  styleUrls: ['./income.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 
-export class IncomeComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   incomes$: any = [];
 
   constructor(private data: DataService) { }
 
-  // ngOnInit() {
-  //   this.data.getIncomes().subscribe(
-  //     data =>  {this.incomes = data;
-  //     this.incomes = Array.of(this.incomes);
-  //     }
-  //   );
-  // }
   ngOnInit() {
     this.data.getIncomes().subscribe(
       (data: any) => {this.incomes$ = data.data;}
