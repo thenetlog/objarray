@@ -14,7 +14,6 @@ export class DataService {
 
   getIncomes() {
     const url = "http://localhost:5000/api/income/GetIncome/0";
-    this.url: Object;
     return this.http.get(url);
   }
 
