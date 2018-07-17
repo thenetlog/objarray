@@ -1,0 +1,23 @@
+<nav>
+  <ul>
+
+    <li>
+      <a routerLink="income" [class.activated]="currentUrl == '/income'">
+          <i class="material-icons">trending_up</i>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="expense" [class.activated]="currentUrl == '/expense'">
+          <i class="material-icons">trending_down</i>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="report" [class.activated]="currentUrl == '/report'">
+          <i class="material-icons">report_problem</i>
+      </a>
+    </li>
+
+  </ul>
+</nav>
