@@ -6,6 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './expense.component.html',
   styleUrls: ['./expense.component.scss']
 })
+
 export class ExpenseComponent implements OnInit {
 
   expenses$: any = [];
