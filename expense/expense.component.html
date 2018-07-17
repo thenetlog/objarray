@@ -1,0 +1,39 @@
+<h2>Expense Table</h2>
+
+<table style="width:100%" id="t01">
+  <thead>
+    <th>ExpenseID</th>
+    <th>TransactionDate</th>
+    <th>Particular</th>
+    <th>Amount</th>
+  </thead>
+  <tbody style="color: blue">
+    <tr *ngFor="let expense of expenses$">
+        <td>{{ expense.ExpenseID }}</td>
+        <td>{{ expense.TransactionDate }}</td>
+        <td>{{ expense.Particular }}</td>
+        <td>{{ expense.Amount }}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr>
+<br>
+
+<form action="" method="">
+
+  <label for="expenseID">ExpenseID</label><br>
+  <input type="number" class="" value=""><br>
+
+  <label for="transactionDate">TransactionDate</label><br>
+  <input type="text" class="" value=""><br>
+
+  <label for="particular">Particular</label><br>
+  <input type="text" class="" value=""><br>
+
+  <label for="amount">Amount</label><br>
+  <input type="number" class="" value=""><br>
+
+  <button type="submit">Insert</button>
+
+</form>
