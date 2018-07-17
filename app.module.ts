@@ -7,9 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { UsersComponent } from './users/users.component';
-import { DetailsComponent } from './details/details.component';
-import { PostsComponent } from './posts/posts.component';
 import { IncomeComponent } from './income/income.component';
 import { ExpenseComponent } from './expense/expense.component';
 import { ReportComponent } from './report/report.component';
@@ -18,9 +15,6 @@ import { ReportComponent } from './report/report.component';
   declarations: [
     AppComponent,
     SidebarComponent,
-    UsersComponent,
-    DetailsComponent,
-    PostsComponent,
     IncomeComponent,
     ExpenseComponent,
     ReportComponent
