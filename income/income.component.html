@@ -1,0 +1,44 @@
+<h2>Income Table</h2>
+
+<table style="width:100%" id="t01">
+  <thead>
+    <th>IncomeID</th>
+    <th>TransactionDate</th>
+    <th>DonarName</th>
+    <th>Amount</th>
+    <th>Action</th>
+  </thead>
+  <tbody style="color: blue">
+    <tr *ngFor="let income of incomes$">
+        <td>{{ income.IncomeID }}</td>
+        <td>{{ income.TransactionDate | date: 'fullDate' }}</td>
+        <td>{{ income.DonarName }}</td>
+        <td>{{ income.Amount }}</td>
+        <td>
+          <a href="" >Edit--Update</a>
+        </td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+<hr>
+<br><br>
+
+
+<form action="" method="">
+
+  <label for="IncomeID">IncomeID</label><br>
+  <input type="number" class="" value=""><br>
+
+  <label for="TransactionDate">TransactionDate</label><br>
+  <input type="text" class="" value=""><br>
+
+  <label for="DonarName">DonarName</label><br>
+  <input type="text" class="" value=""><br>
+
+  <label for="Amount">Amount</label><br>
+  <input type="number" class="" value=""><br>
+
+  <button type="submit">Update</button>
+
+</form>
