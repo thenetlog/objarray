@@ -6,16 +6,21 @@
     <th>TransactionDate</th>
     <th>DonarName</th>
     <th>Amount</th>
-    <th>Action</th>
+    <th>ModifiedDate</th>
+    
   </thead>
-  <tbody style="color: blue">
-    <tr *ngFor="let income of incomes$">
+  <tbody style="color: blue" *ngFor="let income of incomes$">
+    <tr [class.selected]="income === selectedIncome"
+    (click)="onSelect(income)">
+
         <td>{{ income.IncomeID }}</td>
-        <td>{{ income.TransactionDate | date: 'fullDate' }}</td>
+        <td>{{ income.TransactionDate | date }}</td>
         <td>{{ income.DonarName }}</td>
         <td>{{ income.Amount }}</td>
+        <td>{{ income.modified_date | date }}</td>
         <td>
-          <a href="" >Edit--Update</a>
+          <!-- <a routerLink="/income" (click)="deIncome(income.IncomeID)">Delete</a> -->
+          <button type="submit" (click)="deIncome(income.IncomeID)">Delete</button>
         </td>
     </tr>
   </tbody>
@@ -23,22 +28,4 @@
 <br><br>
 <hr>
 <br><br>
-
-
-<form action="" method="">
-
-  <label for="incomeID">IncomeID</label><br>
-  <input type="number" class="" value=""><br>
-
-  <label for="transactionDate">TransactionDate</label><br>
-  <input type="text" class="" value=""><br>
-
-  <label for="donarName">DonarName</label><br>
-  <input type="text" class="" value=""><br>
-
-  <label for="amount">Amount</label><br>
-  <input type="number" class="" value=""><br>
-
-  <button type="submit">Update</button>
-
-</form>
+<app-incomef [Select]="selectedIncome"></app-incomef>
