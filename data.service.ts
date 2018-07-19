@@ -9,7 +9,6 @@ interface myData {
   data: Object;
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +17,6 @@ export class DataService {
   private headers: HttpHeaders;
   readonly ROOT_URL = 'http://localhost:5000';
   
-
   constructor(private http: HttpClient) { 
     this.headers = new HttpHeaders({'Content-Type': 'application/json' });
   }
@@ -40,7 +38,5 @@ export class DataService {
   getExpense() {
     return this.http.get<myData>(this.ROOT_URL + '/api/expense/GetExpense/0');
   }
-
-  
 
 }
