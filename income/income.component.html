@@ -1,3 +1,17 @@
+<h5>Create New Income Data</h5>
+  <form action="" method="POST">
+    
+      <label for="donarName">DonarName</label><br>
+      <input type="text" name="DonarName" [(ngModel)]="incomeModel.DonarName"><br>
+    
+      <label for="amount">Amount</label><br>
+      <input type="number" name="Amount" [(ngModel)]="incomeModel.Amount"><br>
+    
+      <button (click)="createIncome()">Insert</button>
+    
+    </form>
+<hr>
+
 <h2>Income Table</h2>
 
 <table style="width:100%" id="t01">
@@ -19,13 +33,19 @@
         <td>{{ income.Amount }}</td>
         <td>{{ income.modified_date | date }}</td>
         <td>
-          <!-- <a routerLink="/income" (click)="deIncome(income.IncomeID)">Delete</a> -->
-          <button type="submit" (click)="deIncome(income.IncomeID)">Delete</button>
+          <button type="submit">Delete</button>
         </td>
     </tr>
   </tbody>
 </table>
 <br><br>
+
+<!-- show hide edit|update income form -->
+<button (click)="toggle()" id="bt">
+  <i class="material-icons">edit</i>{{incomef}}
+</button>
+<ng-container *ngIf="Update">
+  <app-incomef [Select]="selectedIncome"></app-incomef>
+</ng-container>
 <hr>
 <br><br>
-<app-incomef [Select]="selectedIncome"></app-incomef>
