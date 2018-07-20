@@ -12,14 +12,30 @@ interface myData {
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
 
-  private headers: HttpHeaders;
+export class DataService {
+  
+  public headers: HttpHeaders;
+  options: RequestOptions;
+  public token: string;
   readonly ROOT_URL = 'http://localhost:5000';
   
+
   constructor(private http: HttpClient) { 
-    this.headers = new HttpHeaders({'Content-Type': 'application/json' });
-  }
+    this.headers = new HttpHeaders({'Content-Type': 'application/json'});
+    // this.headers.append('Content-Type', 'multipart/form-data')
+    // this.headers.append('Accept', 'application/json');
+  };
+
+  storeExpense(expenseModel) {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Access-Control-Allow-Headers': '*' }),
+      };
+    const body = new FormData();
+    body.append('token', 'ZG90bmV0QVBJ');
+    body.append('objInfo', JSON.stringify(expenseModel));
+    return this.http.post(this.ROOT_URL + '/api/expense/SaveExpense', body, httpOptions);
+  };
 
   upIncome(Select) {
     const httpOptions = {
@@ -29,14 +45,35 @@ export class DataService {
     body.append('token', 'ZG90bmV0QVBJ');
     body.append('objInfo', JSON.stringify(Select));
     return this.http.post(this.ROOT_URL + '/api/income/SaveIncome', body, httpOptions);
-  }''
+  };
+
+  storeIncome(incomeModel) {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Access-Control-Allow-Headers': '*' })
+      };
+    const body = new FormData();
+    body.append('token', 'ZG90bmV0QVBJ');
+    body.append('objInfo', JSON.stringify(incomeModel));
+    return this.http.post(this.ROOT_URL + '/api/income/SaveIncome', body, httpOptions);
+  }
 
   getIncomes() {
-    return this.http.get<myData>(this.ROOT_URL + 'api/income/GetIncome/0');
-  }
+    return this.http.get<myData>('http://localhost:5000/api/income/GetIncome/0');
+  };
 
   getExpense() {
-    return this.http.get<myData>(this.ROOT_URL + '/api/expense/GetExpense/0');
-  }
+    return this.http.get<myData>('http://localhost:5000/api/expense/GetExpense/0');
+  };
 
-}
+  //Update Expense
+  upExpense(Select) {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Access-Control-Allow-Headers': '*' })
+    };
+    const body = new FormData();
+    body.append('token', 'ZG90bmV0QVBJ');
+    body.append('objInfo', JSON.stringify(Select));
+    return this.http.post(this.ROOT_URL + '/api/expense/SaveExpense', body, httpOptions);
+  };
+
+ }
