@@ -22,12 +22,10 @@ export class IncomefComponent implements OnInit
   ngOnInit(){
   }
 
-  goBack(): void {
-    this.location.back();
-  }
-
   updateIncome() {
-    this.data.upIncome(this.Select).subscribe(val => console.log(val));
+    this.data.upIncome(this.Select)
+    .subscribe(val => console.log(val)
+  );
   }
 
 }
