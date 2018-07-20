@@ -1,3 +1,22 @@
+<h4>Create New Expense Data</h4>
+
+<form action="" method="POST" #userForm="ngForm">
+    {{ userForm.value | json }}
+    <br>
+    {{ expenseModel | json }}
+    <br>
+    
+      <label for="particular">Particular</label><br>
+      <input type="text" name="Particular" [(ngModel)]="expenseModel.Particular"><br>
+    
+      <label for="amount">Amount</label><br>
+      <input type="number" name="Amount" [(ngModel)]="expenseModel.Amount"><br>
+    
+      <button (click)="createExpense()">Insert</button>
+    
+    </form>
+<hr>
+
 <h2>Expense Table</h2>
 
 <table style="width:100%" id="t01">
@@ -7,33 +26,22 @@
     <th>Particular</th>
     <th>Amount</th>
   </thead>
-  <tbody style="color: blue">
-    <tr *ngFor="let expense of expenses$">
+  <tbody style="color: blue" *ngFor="let expense of expenses$">
+    <tr [class.selected]="expense === selectedExpense"
+    (click)="onSelect(expense)">
         <td>{{ expense.ExpenseID }}</td>
         <td>{{ expense.TransactionDate }}</td>
         <td>{{ expense.Particular }}</td>
         <td>{{ expense.Amount }}</td>
+        <td>
+            <button type="submit" (click)="deExpense(expense.ExpenseID)">Delete</button>
+        </td>
     </tr>
   </tbody>
 </table>
-<br><br>
+<br>
 <hr>
 <br>
 
-<form action="" method="">
+<app-expensef [Select]="selectedExpense"></app-expensef>
 
-  <label for="expenseID">ExpenseID</label><br>
-  <input type="number" class="" value=""><br>
-
-  <label for="transactionDate">TransactionDate</label><br>
-  <input type="text" class="" value=""><br>
-
-  <label for="particular">Particular</label><br>
-  <input type="text" class="" value=""><br>
-
-  <label for="amount">Amount</label><br>
-  <input type="number" class="" value=""><br>
-
-  <button type="submit">Insert</button>
-
-</form>
