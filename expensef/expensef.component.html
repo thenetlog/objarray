@@ -1,0 +1,21 @@
+<h5>Edit Expense data</h5>
+<form action="" method="" *ngIf="Select">
+
+    <label for="ExpenseID">ExpenseID</label><br>
+    <input type="number" [(ngModel)]="Select.ExpenseID" name="ExpenseID"><br>
+  
+    <label for="TransactionDate">TransactionDate</label><br>
+    <input type="text" [(ngModel)]="Select.TransactionDate" name="TransactionDate"><br>
+  
+    <label for="Particular">Particular</label><br>
+    <input type="text" [(ngModel)]="Select.Particular" name="Particular"><br>
+  
+    <label for="Amount">Amount</label><br>
+    <input type="number" [(ngModel)]="Select.Amount" name="Amount"><br>
+  
+    <label for="ModifiedDate">ModifiedDate</label><br>
+    <input type="text" [(ngModel)]="Select.Modified_date" name="ModifiedDate"><br>
+  
+    <button type="submit" (click)="updateExpense()">Update</button>
+  
+  </form>
