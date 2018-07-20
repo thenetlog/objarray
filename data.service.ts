@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http'
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap, filter} from 'rxjs/operators';
-import { Income } from './income';
+// import { Http, Response, Headers, RequestOptions, RequestMethod } from '@angular/http'
+// import { Observable, of } from 'rxjs';
+// import { catchError, map, tap, filter} from 'rxjs/operators';
+// import { Income } from './income';
 
 interface myData {
   data: Object;
@@ -16,9 +16,9 @@ interface myData {
 export class DataService {
   
   public headers: HttpHeaders;
-  options: RequestOptions;
-  public token: string;
   readonly ROOT_URL = 'http://localhost:5000';
+  // options: RequestOptions;
+  // public token: string;
   
 
   constructor(private http: HttpClient) { 
