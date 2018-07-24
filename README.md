@@ -1,5 +1,10 @@
 # Angular CRUD with C# backend
 
+< 24 July Delete>
+- update income html -> get id
+- update income component -> delete()
+- update data service -> delete()
+
 < 20 July, Create, Read, Update >
 - update service file -> data.service.ts
 - update class file -> income.ts //set default value
