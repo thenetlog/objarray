@@ -50,4 +50,14 @@ export class IncomeComponent implements OnInit {
     this.data.storeIncome(this.incomeModel).subscribe(val => console.log(val));
   }
 
+  //Delete
+  deIncome(incomeID): void {
+    var ans = confirm("Do you want to delete this Id: " + incomeID);
+    if(ans){
+      this.data.deIncome(incomeID).subscribe(
+        val => console.log(val)
+      );
+    }
+  }
+
 }

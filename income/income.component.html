@@ -33,7 +33,7 @@
         <td>{{ income.Amount }}</td>
         <td>{{ income.modified_date | date }}</td>
         <td>
-          <button type="submit">Delete</button>
+          <button type="submit" (click)="deIncome(income.IncomeID)">Delete</button>
         </td>
     </tr>
   </tbody>
