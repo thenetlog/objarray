@@ -37,6 +37,15 @@ export class DataService {
     return this.http.post(this.ROOT_URL + '/api/expense/SaveExpense', body, httpOptions);
   };
 
+  deIncome(id: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Access-Control-Allow-Headers': '*' })
+    }
+    const body = new FormData();
+    body.append('token', 'ZG90bmV0QVBJ');
+  return this.http.post(this.ROOT_URL + '/api/income/DeleteIncome/' + id , body, httpOptions);
+  }; 
+
   upIncome(Select) {
     const httpOptions = {
       headers: new HttpHeaders({ 'Access-Control-Allow-Headers': '*' })
